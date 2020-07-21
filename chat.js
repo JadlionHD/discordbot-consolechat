@@ -8,33 +8,31 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+// to make it easier to read
+function HTTPreq(urls, methods, jsons) {
+	request({
+		url: urls,
+		method: methods,
+		headers: {
+			Authorization: `Bot ${config.token}`
+		},
+		json: jsons
+	}, function(err, res, body) {
+		// idk u can do something here
+	})
+}
+
 var loopingreadline = function () {
 	rl.question("Message: ", function (msgdiscord) {
 		
-		request({ // typing function
-			url: config.typetrigger, // typing api
-			method: "POST",
-			headers: {
-				Authorization: config.token
-			}
-		}, function(err, res, body) {
-			console.log(body)
-		})
+		let messageOption = {
+			content: msgdiscord,
+			tts: false
+		}
 		
-		request({ // sending message
-			url: config.channellink, // channel id that using api
-			method: "POST",
-			json: {
-				content: msgdiscord,
-				tts: config.tts
-			},
-			headers: {
-				Authorization: config.token
-			}
-		}, function(err, res, body) {
-			// ok u can do anything here
-			// bot <token> at config
-		})
+		HTTPreq(config.typetrigger, "POST", false);
+		HTTPreq(config.channellink, "POST", messageOption);
+		
 		loopingreadline();
 	}) 
 }
