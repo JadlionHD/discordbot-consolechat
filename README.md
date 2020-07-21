@@ -7,5 +7,6 @@ First you need to read this [API](https://discord.com/developers/docs/intro) to 
 If you already read the reference folow these step
 - do `npm install` or manually `npm install request`
 - setup all the config.json
+- to run it, type `node chat.js` in your cmd
 
 And there we go your bot are now ready to use
