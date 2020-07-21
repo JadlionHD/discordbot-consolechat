@@ -1,0 +1,14 @@
+{
+  "name": "consolechat",
+  "version": "1.0.0",
+  "description": "example console chat using javascript/nodejs",
+  "main": "chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JadlionHD",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}

@@ -1,0 +1,6 @@
+{
+	"channellink": "https://discord.com/api/channels/<channelid>/messages",
+	"typetrigger": "https://discord.com/api/channels/<channelid>/typing",
+	"token": "Bot tokenhere :D",
+	"tts": false
+}
